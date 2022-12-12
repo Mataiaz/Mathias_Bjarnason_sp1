@@ -8,19 +8,84 @@
 
 <body>
   <div>
-    <table  class="center">
-        <tr>
-          <th>Picture</th>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>Email address</th>
-          <th>Status</th>
-          <th>Out Time</th>
-          <th>Duration</th>
-          <th>Expected Return Time</th>
-        </tr>
+    <table class="dashboard" id="navBar">
+      <tr>
+        <th>Dashboard</th>
+        <th>Inventory</th>
+        <th>Orders</th>
+      </tr>
+      <tr id="dropMenu">
+        <th></th>
+        <th>Search</th>
+        <th>Search</th>
+      </tr>
+      <tr id="dropMenu">
+        <th></th>
+        <th>Add</th>
+        <th>Add</th>
+      </tr>
+      <tr id="dropMenu">
+        <th></th>
+        <th>Remove</th>
+        <th>Remove</th>
+      </tr>
     </table>
-  </div>
-  <script src="wdt_app.js"></script>
+  <div>
 
+  </div>
+    <table class="dashboard" id="staffTable">
+      <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email address</th>
+        <th>Status</th>
+        <th>Out Time</th>
+        <th>Duration</th>
+        <th>Expected Return Time</th>
+      </tr>
+    </table>
+    <button class="rightButton" type="button" id="inBtn">In</button>
+    <button class="leftButton" type="button" id="outBtn">Out</button>
+  </div>
+  <div>
+    <table class="dashboard" id="scheduleTable">
+      <tr>
+        <th>Vehicle:<div><input type="text"></div></th>
+        <th>Name<div><input type="text"></th>
+        <th>Surname<div><input type="text"></th>
+        <th>Telephone<div><input type="number"></th>
+        <th>Delivery Address<div><input type="text"></th>
+        <th>Return time<div><input type="number"></th>
+      </tr>
+    </table>
+    <button class="rightButton" type="button" id="deliveryBtn">Add</button>
+  </div>
+  <div>
+    <table class="dashboard" id="deliveryTable">
+      <tr>
+        <th>Vehicle:</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Telephone</th>
+        <th>Delivery Address</th>
+        <th>Return time</th>
+      </tr>
+    </table>
+    <button class="rightButton" type="button" id="clearBtn">Clear</button>
+    <p id="clock" class="mainClock"></p>
+  </div>
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Warning</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Employee is late..
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script src="wdt_app.js"></script>
 </html>
