@@ -126,7 +126,7 @@ function getCurrentTime() {
    
 }
 
-
+//method for checking order and populating delivery board
 $('#deliveryBtn').on('click', () => {
     try {
         let i = 0;
@@ -174,18 +174,16 @@ $('#deliveryBtn').on('click', () => {
         console.log(error);
     }
 })
-
+//method for selecting order
 $('#deliveryTable').on('click', 'tr:not(:first-child)', function(){
     let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
     rows.forEach(node => {
         node.classList.remove('toDelete');
       });
-    $(rows).css('background', 'white');
-    $(this).css('background', 'red');
     $(this).addClass("toDelete");
     console.log(this);
 });
-
+//Selecting a delivery order and then clicking clear will clear that order
 $('#clearBtn').on('click', () => {
     const toDelete = document.getElementsByClassName("toDelete");
     let rows = Array.from(document.querySelectorAll('#deliveryTable tr:not(:first-child)'));
@@ -193,22 +191,19 @@ $('#clearBtn').on('click', () => {
     rows.forEach(node => {
         node.classList.remove('marked');
       });
-    $(rows).css('background', 'white');
     
 })
-
+//method for selecting a employee
 $('#staffTable').on('click', 'tr:not(:first-child)', function(){
     
     let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
     rows.forEach(node => {
         node.classList.remove('marked');
       });
-    $(rows).css('background', 'white');
-    $(this).css('background', 'red');
     $(this).addClass("marked");
     
 });
-
+//Clicking the in button will update the employee's status
 $('#inBtn').on('click', () => {
     const marked = document.getElementsByClassName("marked");
     let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
@@ -219,9 +214,8 @@ $('#inBtn').on('click', () => {
     rows.forEach(node => {
         node.classList.remove('marked');
       });
-    $(rows).css('background', 'white');
 })
-
+//Clicking the out button will prompt the user for length in minutes and update the employee's status
 $('#outBtn').on('click', () => {
     const marked = document.getElementsByClassName("marked");
     let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
@@ -236,7 +230,6 @@ $('#outBtn').on('click', () => {
         var hours = Math.floor(time / 60);  
         var minutes = time % 60;
         $(marked).find('td:eq(6)').html(hours + "hrs " + minutes + "min");
-        const returnDate = new Date();
         hour += hours;
         min += minutes;
         $(marked).find('td:eq(7)').html(hour + ":" + min);
@@ -247,7 +240,6 @@ $('#outBtn').on('click', () => {
     rows.forEach(node => {
         node.classList.remove('marked');
       });
-    $(rows).css('background', 'white');
 })
 //Hover to show submenu of navigation bar
 var change = 0;

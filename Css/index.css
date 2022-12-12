@@ -123,6 +123,7 @@ p, h1 {
   background-color: #83D1E1;
   color: #212529;
   width: 200px;
+  display: none;
 }
 
 .toast-header {
