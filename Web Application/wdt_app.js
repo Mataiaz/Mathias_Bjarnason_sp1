@@ -5,8 +5,6 @@ const deliveryTable = document.getElementById("deliveryTable");
 Load();
 
 async function Load() {
-    $('#navBar #dropMenu').hide();
-
     loadTableData();
     displayTime();
 }
@@ -178,7 +176,7 @@ $('#deliveryBtn').on('click', () => {
 })
 
 $('#deliveryTable').on('click', 'tr:not(:first-child)', function(){
-    let rows = Array.from(document.querySelectorAll('tr'));
+    let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
     rows.forEach(node => {
         node.classList.remove('toDelete');
       });
@@ -201,7 +199,7 @@ $('#clearBtn').on('click', () => {
 
 $('#staffTable').on('click', 'tr:not(:first-child)', function(){
     
-    let rows = Array.from(document.querySelectorAll('tr'));
+    let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
     rows.forEach(node => {
         node.classList.remove('marked');
       });
@@ -213,7 +211,7 @@ $('#staffTable').on('click', 'tr:not(:first-child)', function(){
 
 $('#inBtn').on('click', () => {
     const marked = document.getElementsByClassName("marked");
-    let rows = Array.from(document.querySelectorAll('tr'));
+    let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
     $(marked).find('td:eq(4)').html('In');
     $(marked).find('td:eq(5)').html('');
     $(marked).find('td:eq(6)').html('');
@@ -226,7 +224,7 @@ $('#inBtn').on('click', () => {
 
 $('#outBtn').on('click', () => {
     const marked = document.getElementsByClassName("marked");
-    let rows = Array.from(document.querySelectorAll('tr'));
+    let rows = Array.from(document.querySelectorAll('tr:not(:first-child)'));
     var time = prompt("Please enter a time");
     var d = new Date();
     var hour = d.getHours();
@@ -251,15 +249,19 @@ $('#outBtn').on('click', () => {
       });
     $(rows).css('background', 'white');
 })
-
+//Hover to show submenu of navigation bar
 var change = 0;
-$('#navBar').hover(() => {
+$('.navBar').hover(() => {
     if (change == 0) {
-        $('#navBar #dropMenu').hide();
+        $('.dropMenu').show();
         change++;
     }
     else {
         change = 0;
-        $('#navBar #dropMenu').show();
+        $('.dropMenu').hide();
     }
+});
+//Close toast
+$('.toast .btn-close').on('click', () => {
+    $('.toast').hide()
 });

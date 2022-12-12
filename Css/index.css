@@ -1,22 +1,91 @@
-.dashboard, th, td {
+.header {
+  font-family: consolas;
+  background-color: #0E8EA8;
+  color: #fff;
+}
+
+.dashboard, tr:not(:first-child), td{
+  font-family: consolas;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #0E8EA8;
+}
+
+.dashboard {
+  border: 1px #212529 thin;
+  background-color: #0E8EA8;
+  border-style: solid;
+  border-width: 1px;
+  border-radius:6px;
+  margin-top: 30px;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px black solid;
-  border-collapse: collapse;
 }
 
-.leftButton {
-  left:10%;
+.dashboard, td {
+  font-family: consolas;
+  background-color: #83D1E1;
+  color: #212529;
+}
+
+.navBar {
+  border: 1px #212529 thin;
+  font-family: consolas;
+  border-style: solid;
+  border-width: 1px;
+  border-radius:6px;
+  background-color: #0E8EA8;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropMenu {
+  background-color: #83D1E1;
+  color: #fff;
+  display: none;
+}
+
+.clearButton {
+  left:72%;
   width:100px;
   height:40px;
   position: relative;
+  font-family: consolas;
+  background-color: #dc3545;
+  color: #fff;
 }
 
-.rightButton {
-  left:70%;
+.outButton {
+  left:14.5%;
   width:100px;
   height:40px;
   position: relative;
+  font-family: consolas;
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.inButton {
+  left:72%;
+  width:100px;
+  height:40px;
+  position: relative;
+  font-family: consolas;
+  background-color: #198754;
+  color: #fff;
+}
+
+.addButton {
+  left:72%;
+  width:100px;
+  height:40px;
+  position: relative;
+  font-family: consolas;
+
+  background-color: #198754;
+  color: #fff;
 }
 
 .mainClock {
@@ -26,21 +95,45 @@
   position: relative;
 }
 
-.icon {
-  height: 2rem;
-  width: 2rem;
-  margin-right: 1rem;
-  color: white;
-}
-
-.text {
-  color: white;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
+.logo {
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+
+.column {
+  float: left;
+  width: 16%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+p, h1 {
+  font-family: Calibri;
+  color: #212529;
+}
+
+.toast {
+  font-family: consolas;
+  background-color: #83D1E1;
+  color: #212529;
+  width: 200px;
+}
+
+.toast-header {
+  font-family: consolas;
+  background-color: #0E8EA8;
+  width: 200px;
+}
+
+.btn-close {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  float: right;
 }

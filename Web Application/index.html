@@ -8,49 +8,53 @@
 
 <body>
   <div>
-    <table class="dashboard" id="navBar">
+    <table class="navBar">
       <tr>
         <th>Dashboard</th>
         <th>Inventory</th>
         <th>Orders</th>
       </tr>
-      <tr id="dropMenu">
+      <tr class="dropMenu">
         <th></th>
         <th>Search</th>
         <th>Search</th>
       </tr>
-      <tr id="dropMenu">
+      <tr class="dropMenu">
         <th></th>
         <th>Add</th>
         <th>Add</th>
       </tr>
-      <tr id="dropMenu">
+      <tr class="dropMenu">
         <th></th>
         <th>Remove</th>
         <th>Remove</th>
       </tr>
     </table>
-  <div>
-
-  </div>
-    <table class="dashboard" id="staffTable">
-      <tr>
-        <th>Picture</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Email address</th>
-        <th>Status</th>
-        <th>Out Time</th>
-        <th>Duration</th>
-        <th>Expected Return Time</th>
-      </tr>
-    </table>
-    <button class="rightButton" type="button" id="inBtn">In</button>
-    <button class="leftButton" type="button" id="outBtn">Out</button>
+    <div class="row">
+      <div class="column">
+      <img class="logo"src="CompanyLogo.png" alt="LOGO">
+      </div>
+      <div class="column">
+        <table class="dashboard" id="staffTable">
+          <tr class="header">
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email address</th>
+            <th>Status</th>
+            <th>Out Time</th>
+            <th>Duration</th>
+            <th>Expected Return Time</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <button class="inButton" type="button" id="inBtn">In</button>
+    <button class="outButton" type="button" id="outBtn">Out</button>
   </div>
   <div>
     <table class="dashboard" id="scheduleTable">
-      <tr>
+      <tr class="header">
         <th>Vehicle:<div><input type="text"></div></th>
         <th>Name<div><input type="text"></th>
         <th>Surname<div><input type="text"></th>
@@ -59,11 +63,11 @@
         <th>Return time<div><input type="number"></th>
       </tr>
     </table>
-    <button class="rightButton" type="button" id="deliveryBtn">Add</button>
+    <button class="addButton" type="button" id="deliveryBtn">Add</button>
   </div>
   <div>
     <table class="dashboard" id="deliveryTable">
-      <tr>
+      <tr class="header">
         <th>Vehicle:</th>
         <th>Name</th>
         <th>Surname</th>
@@ -72,18 +76,16 @@
         <th>Return time</th>
       </tr>
     </table>
-    <button class="rightButton" type="button" id="clearBtn">Clear</button>
+    <button class="clearButton" type="button" id="clearBtn">Clear</button>
     <p id="clock" class="mainClock"></p>
   </div>
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 12">
+    <div  class="toast">
       <div class="toast-header">
-        <strong class="me-auto">Warning</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button class="btn-close">X</button>
+        <h1 class="toastTitle">WARNING</h1>
       </div>
-      <div class="toast-body">
-        Employee is late..
-      </div>
+        <p class="toast-body">Employee is late..</p>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
