@@ -146,7 +146,7 @@ function addDelivery() {
             }
             let row = deliveryTable.insertRow();
             let vehicle = row.insertCell(0);
-            vehicle.innerHTML = '<i class="' + deliveries[deliveries.length -1].vehicle + '"></i>';
+            vehicle.innerHTML = '<i class="' + deliveries[deliveries.length -1].vehicle + '" + style="font-size: 1.3em"></i>';
             deliveries[deliveries.length -1].vehicle = vehicle.innerHTML;
             let name = row.insertCell(1);
             name.innerHTML = deliveries[deliveries.length -1].getName();
