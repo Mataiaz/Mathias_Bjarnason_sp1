@@ -52,6 +52,10 @@
   display: none;
 }
 
+.navBar:hover .dropMenu {
+  display: table-row;
+}
+
 .clearButton {
   left:72%;
   width:100px;

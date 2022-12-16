@@ -49,8 +49,11 @@ async function loadTableData() {
         let status = row.insertCell(4);
         status.innerHTML = item.status;
         let outTime = row.insertCell(5);
+        outTime.innerHTML = '';
         let duration = row.insertCell(6);
+        duration.innerHTML = '';
         let returnTime = row.insertCell(7);
+        returnTime.innerHTML = '';
     });
 }
 function staffIn() {
@@ -372,18 +375,6 @@ $('#inBtn').on('click', () => {
 $('#outBtn').on('click', () => {
     staffOut();
 })
-//Hover to show submenu of navigation bar
-var change = 0;
-$('.navBar').hover(() => {
-    if (change == 0) {
-        $('.dropMenu').show();
-        change++;
-    }
-    else {
-        change = 0;
-        $('.dropMenu').hide();
-    }
-});
 //Close toast
 $('#toast-container').on('click', '.btn-close', (event) => {
     $(event.target).closest('.toast-warning').remove();
@@ -408,7 +399,7 @@ function createStaffToast(picture, name, surName, duration) {
       <div class="toast-title">
       <img src="${picture}"/>
       <button type="button" class="btn-close" data-bs-dismiss="toast-warning" aria-label="Close"></button>
-      <p>Employee: ${name} ${surName}</p>
+      <p>${name} ${surName}</p>
       </div>
     </div>
     <div class="toast-body">
@@ -432,13 +423,13 @@ function createDriverToast(name, surName, telephone, deliveryAddress, returnTime
       <div class="toast-title">
       <button type="button" class="btn-close" data-bs-dismiss="toast-warning" aria-label="Close"></button>
       <p>Delivery reminder</p>
-      <p>Driver: ${name} ${surName}</p>
+      <p>${name} ${surName}</p>
       <p>Phone: ${telephone}</p>
       </div>
     </div>
     <div class="toast-body">
     <p>Address: ${deliveryAddress}</p>
-    <p>Estimated return time: ${returnTime}</p>
+    <p>Estimated return time was ${returnTime}</p>
     </div>`;
     container.innerHTML += toast;
 }
