@@ -411,12 +411,11 @@ function createStaffToast(picture, name, surName, duration) {
       <div class="toast-title">
       <img src="${picture}"/>
       <button type="button" class="btn-close" data-bs-dismiss="toast-warning" aria-label="Close"></button>
-      <p>${name}</p>
-      <p>${surName}</p>
+      <p>Employee: ${name} ${surName}</p>
       </div>
     </div>
     <div class="toast-body">
-    <p>${duration}</p>
+    <p>Total time out: ${duration}</p>
     </div>`;
     container.innerHTML += toast;
 }
@@ -435,14 +434,14 @@ function createDriverToast(name, surName, telephone, deliveryAddress, returnTime
     <div class="toast-header">
       <div class="toast-title">
       <button type="button" class="btn-close" data-bs-dismiss="toast-warning" aria-label="Close"></button>
-      <p>${telephone}</p>
-      <p>${name}</p>
-      <p>${surName}</p>
+      <p>Delivery reminder</p>
+      <p>Driver: ${name} ${surName}</p>
+      <p>Phone: ${telephone}</p>
       </div>
     </div>
     <div class="toast-body">
-    <p>${deliveryAddress}</p>
-    <p>${returnTime}</p>
+    <p>Address: ${deliveryAddress}</p>
+    <p>Estimated return time: ${returnTime}</p>
     </div>`;
     container.innerHTML += toast;
 }
