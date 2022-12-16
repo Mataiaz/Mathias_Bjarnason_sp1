@@ -1,49 +1,54 @@
-.header {
-  font-family: consolas;
-  background-color: #0E8EA8;
-  color: #fff;
+.table {
+  margin: auto;
+  width: 80%;
+  margin-top:20px;
+  border-radius: 10px;
+  text-align: center;
 }
-
-.dashboard, tr:not(:first-child), td{
-  font-family: consolas;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #0E8EA8;
+.table th:first-of-type{
+  border-radius: 10px 0px 0px 0px;
 }
-
-.dashboard {
-  border: 1px #212529 thin;
-  background-color: #0E8EA8;
-  border-style: solid;
-  border-width: 1px;
-  border-radius:6px;
-  margin-top: 30px;
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+.table th:last-of-type{
+  border-radius: 0px 10px 0px 0px;
 }
-
-.dashboard, td {
+.table tr:last-child td:first-of-type{
+  border-radius: 0px 0px 0px 10px;
+}
+.table tr:last-child td:last-of-type{
+  border-radius: 0px 0px 10px 0px;
+}
+.table tr{
   font-family: consolas;
   background-color: #83D1E1;
   color: #212529;
 }
+.table tr:first-child{
+  font-family: consolas;
+  background-color: #0E8EA8;
+  color: #fff;
+}
+.table td, .table th {
+  outline: #212529 solid 1px;
+  font-family: consolas;
+}
+.navBar td, .navBar th {
+  outline: #212529 solid 1px;
+  font-family: consolas;
+}
 
 .navBar {
-  border: 1px #212529 thin;
+  text-align: center;
   font-family: consolas;
-  border-style: solid;
-  border-width: 1px;
-  border-radius:6px;
   background-color: #0E8EA8;
   color: #fff;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 10px;
 }
 
-.dropMenu {
+.dropMenu{
   background-color: #83D1E1;
-  color: #fff;
+  color: #212529;
   display: none;
 }
 
@@ -90,27 +95,33 @@
 
 .mainClock {
   left:80%;
-  width:100px;
+  width:200px;
   height:0px;
   position: relative;
 }
 
 .logo {
-  display: block;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 10%;
 }
 
-.column {
+.toast-warning {
+  font-family: consolas;
+  background-color: #0E8EA8;
+}
+
+.toast-title {
   float: left;
-  width: 16%;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+.btn-close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  right: 5%;
 }
 
 p, h1 {
@@ -118,23 +129,13 @@ p, h1 {
   color: #212529;
 }
 
-.toast {
-  font-family: consolas;
-  background-color: #83D1E1;
-  color: #212529;
-  width: 200px;
-  display: none;
+.title {
+  text-align: center;
 }
 
-.toast-header {
-  font-family: consolas;
-  background-color: #0E8EA8;
-  width: 200px;
-}
-
-.btn-close {
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  float: right;
+#toast-container {
+  position: absolute;
+  overflow:hidden;
+  top: 10%;
+  width: 13%;
 }

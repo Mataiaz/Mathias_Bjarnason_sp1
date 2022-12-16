@@ -3,14 +3,20 @@
 
 <head>
   <title>About me</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../Css/index.css">
 </head>
 
 <body>
-  <div>
+  <div class="splitscreen">
+    <img class="logo" src="CompanyLogo.png" alt="LOGO">
     <table class="navBar">
       <tr>
-        <th>Dashboard</th>
+        <th class="dashboard-item">Dashboard</th>
         <th>Inventory</th>
         <th>Orders</th>
       </tr>
@@ -30,32 +36,33 @@
         <th>Remove</th>
       </tr>
     </table>
-    <div class="row">
-      <div class="column">
-      <img class="logo"src="CompanyLogo.png" alt="LOGO">
-      </div>
-      <div class="column">
-        <table class="dashboard" id="staffTable">
-          <tr class="header">
-            <th>Picture</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Email address</th>
-            <th>Status</th>
-            <th>Out Time</th>
-            <th>Duration</th>
-            <th>Expected Return Time</th>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <button class="inButton" type="button" id="inBtn">In</button>
-    <button class="outButton" type="button" id="outBtn">Out</button>
+    <div class="clearfix"></div>
+  </div>
+  <h1 class="title">Reception Management Dashboard</h1>
+  <h1 class="title">Staff</h1>
+  <table class="table" id="staffTable">
+    <tbody class="staff-body">
+      <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email address</th>
+        <th>Status</th>
+        <th>Out Time</th>
+        <th>Duration</th>
+        <th>Expected Return Time</th>
+      </tr>
+    </tbody>
+  </table>
+  <button class="inButton" type="button" id="inBtn">In</button>
+  <button class="outButton" type="button" id="outBtn">Out</button>
   </div>
   <div>
-    <table class="dashboard" id="scheduleTable">
-      <tr class="header">
-        <th>Vehicle:<div><input type="text"></div></th>
+    <h1 class="title">Schedule Delivery</h1>
+    <table class="table"" id="scheduleTable">
+      <tr>
+        <th>Vehicle:<div><input type="text"></div>
+        </th>
         <th>Name<div><input type="text"></th>
         <th>Surname<div><input type="text"></th>
         <th>Telephone<div><input type="number"></th>
@@ -63,11 +70,12 @@
         <th>Return time<div><input type="number"></th>
       </tr>
     </table>
-    <button class="addButton" type="button" id="deliveryBtn">Add</button>
+    <button class="addButton" type="button" id="addBtn">Add</button>
   </div>
   <div>
-    <table class="dashboard" id="deliveryTable">
-      <tr class="header">
+    <h1 class="title">Delivery Board</h1>
+    <table class="table" id="deliveryTable">
+      <tr>
         <th>Vehicle:</th>
         <th>Name</th>
         <th>Surname</th>
@@ -79,15 +87,8 @@
     <button class="clearButton" type="button" id="clearBtn">Clear</button>
     <p id="clock" class="mainClock"></p>
   </div>
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 12">
-    <div  class="toast">
-      <div class="toast-header">
-        <button class="btn-close">X</button>
-        <h1 class="toastTitle">WARNING</h1>
-      </div>
-        <p class="toast-body">Employee is late..</p>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous"></script>
+  <div id="toast-container"></div>
   <script src="wdt_app.js"></script>
+</body>
+
 </html>
