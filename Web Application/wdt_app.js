@@ -8,7 +8,6 @@ const staff = [];
 const deliveries = [];
 //Here we run the startup functions
 (async function Load() {
-    console.log(scheduleTable);
     await staffUserGet(5);
     new Time().digitalClock();
 })();
@@ -52,8 +51,6 @@ async function loadTableData() {
         let outTime = row.insertCell(5);
         let duration = row.insertCell(6);
         let returnTime = row.insertCell(7);
-        //item.results[0].name.last;
-        console.log(staff)
     });
 }
 function staffIn() {
