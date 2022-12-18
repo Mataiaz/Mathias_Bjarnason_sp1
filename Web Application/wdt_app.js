@@ -56,6 +56,7 @@ async function loadTableData() {
         returnTime.innerHTML = '';
     });
 }
+//Set staff member to in and change their status
 function staffIn() {
     const marked = document.getElementsByClassName("marked");
     let i = staff.length -1;
@@ -79,6 +80,7 @@ function staffIn() {
         node.classList.remove('marked');
       });
 }
+//Set staff member to out and change their status
 function staffOut() {
     const marked = document.getElementsByClassName("marked");
     let i = staff.length -1;
@@ -141,6 +143,7 @@ function staffOut() {
         node.classList.remove('marked');
       });
 }
+//Add new delivery
 function addDelivery() {
     const order = [];
         validateDelivery(order);
@@ -317,6 +320,7 @@ class Time {
         document.getElementById("clock").innerHTML = day + " " + month +" "+ year + " " + hour + ":" + min + ":" + sec;
         setInterval(this.digitalClock, 1000);
     }
+    //Get time in (hr:min)
     getTime() {
         var d = new Date();
         var hour = d.getHours();
@@ -397,6 +401,7 @@ $('#toast-container').on('click', '.btn-close', (event) => {
 $('.dashboard-item').on('click', () => {
     window.location.href = "index.html";
 });
+//Function to create a toast for a staff member
 function createStaffToast(picture, name, surName, duration) {
     let container;
     //If container doesn't already exist create one
@@ -421,6 +426,7 @@ function createStaffToast(picture, name, surName, duration) {
     </div>`;
     container.innerHTML += toast;
 }
+//Function to create a toast for a delivery driver
 function createDriverToast(name, surName, telephone, deliveryAddress, returnTime) {
     let container;
     //If container doesn't already exist create one
