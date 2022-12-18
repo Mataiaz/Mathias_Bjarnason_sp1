@@ -66,6 +66,10 @@
   color: #fff;
 }
 
+.clearButton:hover{
+  background-color: #ff5b6c;
+}
+
 .outButton {
   left:14.5%;
   width:100px;
@@ -74,6 +78,10 @@
   font-family: consolas;
   background-color: #dc3545;
   color: #fff;
+}
+
+.outButton:hover{
+  background-color: #ff5b6c;
 }
 
 .inButton {
@@ -86,6 +94,10 @@
   color: #fff;
 }
 
+.inButton:hover{
+  background-color: #14d176;
+}
+
 .addButton {
   left:72%;
   width:100px;
@@ -95,6 +107,9 @@
 
   background-color: #198754;
   color: #fff;
+}
+.addButton:hover{
+  background-color: #14d176;
 }
 
 .mainClock {
