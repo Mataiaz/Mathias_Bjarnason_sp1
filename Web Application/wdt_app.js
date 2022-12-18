@@ -97,8 +97,7 @@ function staffOut() {
     var milliseconds = time * 60000;
     var hours = Math.floor(time / 60);  
     var minutes = time % 60;
-    console.log(staff.length);
-    if(!Number.isNaN(time) && time.length < 5 && time.length > 0 && /^\d+$/.test(time))
+    if(!Number.isNaN(time) && time.length < 5 && time.length > 0 && /^\d+$/.test(time) && time <= 1440)
     {
         if(hour < 10) {
             hour = '0'+hour;
@@ -118,6 +117,15 @@ function staffOut() {
         if(min < 10) {
             min = '0'+min;
         }
+        //1440
+        if(hour > 24 || min > 59) {
+            while(hour > 24) {
+                hour -= 24;
+            }
+            while( min > 59) {
+                min -= 60
+            }
+        }
         staff[i].duration = hours + "hrs " + minutes + "min";
         staff[i].expectedReturnTime = hour + ":" + min;
         $(marked).find('td:eq(4)').html(staff[i].status);
@@ -127,7 +135,7 @@ function staffOut() {
         setTimeout(() => {staff[i].staffMemberIsLate()}, milliseconds);
     }
     else {
-        alert("Invalid time")
+        alert("Invalid time.. max time is 1440 minutes (24 hours)");
     }
     rows.forEach(node => {
         node.classList.remove('marked');
@@ -168,9 +176,15 @@ function addDelivery() {
         var d = new Date();
         var hour = d.getHours();
         var min = d.getMinutes();
-        var time = hour - deliveries[deliveries.length -1].returnTime.slice(0, 2);
+        var time = deliveries[deliveries.length -1].returnTime.slice(0, 2) - hour;
+        if(time < 0) {
+            time += 24;
+        }
         time = time * 60;
-        time = min - deliveries[deliveries.length -1].returnTime.slice(2);
+        time += deliveries[deliveries.length -1].returnTime.slice(3, 5) - min;
+        if(time < 0) {
+            time += 1440;
+        }
         var milliseconds = time * 60000;
         setTimeout(() => {deliveries[deliveries.length -1].deliveryDriverIsLate()}, milliseconds);
 }
