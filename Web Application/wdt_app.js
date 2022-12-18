@@ -123,7 +123,7 @@ function staffOut() {
                 hour -= 24;
             }
             while( min > 59) {
-                min -= 60
+                min -= 60;
             }
         }
         staff[i].duration = hours + "hrs " + minutes + "min";
@@ -243,7 +243,7 @@ class Employee {
         return this.surName;
     }
 }
-//Staff member 
+//Staff member
 class StaffMember extends Employee {
     picture;
     email;
